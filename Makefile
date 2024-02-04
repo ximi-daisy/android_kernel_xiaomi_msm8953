@@ -757,6 +757,11 @@ else
 KBUILD_CFLAGS   += -O2
 endif
 
+# Tell compiler to tune the performance of the code for a specified
+# target processor
+KBUILD_CFLAGS += -mcpu=cortex-a53+crc+crypto
+KBUILD_AFLAGS += -mcpu=cortex-a53+crc+crypto
+
 ifdef CONFIG_CC_WERROR
 KBUILD_CFLAGS	+= -Werror
 endif
